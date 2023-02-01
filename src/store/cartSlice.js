@@ -21,7 +21,7 @@ import { createSlice } from '@reduxjs/toolkit';
                 })
             } else {
                 existingItem.quantity++;
-                existingItem.totalPrice = existingItem.totalPrice - newItem.price;
+                existingItem.totalPrice = existingItem.totalPrice + newItem.price;
             }
         },
         removeItemFromCart(state, action){
