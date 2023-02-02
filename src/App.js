@@ -13,9 +13,7 @@ function App() {
   const notification = useSelector(state => state.ui.notification);
 
   useEffect(() => {
-// git add .
-// git commit -m 'update'
-// git push -u origin main
+
 
 dispatch(uiActions.setNotification({
   status:'pending',
@@ -51,7 +49,11 @@ dispatch(uiActions.setNotification({
 
   return (
     <Fragment>
-      { notification && <Notification />}
+      { notification && <Notification 
+      status={notification.status}
+      title={notification.title}
+      message={notification.message}
+      />}
     <Layout>
      {cartShow && <Cart /> }
       <Products />
