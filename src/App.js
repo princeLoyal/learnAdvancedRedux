@@ -6,6 +6,8 @@ import { useEffect, Fragment } from 'react';
 import Notification from './components/UI/Notification';
 import { uiActions } from './store/index';
 
+const initialRender = true;
+
 function App() {
   const dispatch = useDispatch();
   const cartShow = useSelector(state => state.ui.cartShow);
@@ -35,6 +37,12 @@ dispatch(uiActions.setNotification({
         message: 'Sent Cart data succesfully'
       }));
   };
+
+if(initialRender){
+   initialRender = false;
+   return;
+}
+
 fetchHandler().catch((error) => {
           dispatch(uiActions.setNotification({
             status:'error',
