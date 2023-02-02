@@ -9,7 +9,11 @@ const Cart = (props) => {
 const dispatch = useDispatch();
 useEffect(() => {
 dispatch(cartActions.getItemsFromDatabase({
-items: [],
+items: [{
+id: 'p2',
+name: 'A good book',
+price: 45.6
+}],
 totalQuantity: 0
 }))
 }, []);
