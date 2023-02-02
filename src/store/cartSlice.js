@@ -8,7 +8,7 @@ import { createSlice } from '@reduxjs/toolkit';
     },
     reducers: {
 getItemsFromDatabase(state, action){
-state = state.action.payload;
+state = action.payload;
 },
         addItemToCart(state, action){
             const newItem = action.payload;
