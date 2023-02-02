@@ -6,7 +6,13 @@ import { useEffect } from 'react';
 import { cartActions } from '../../store/cartSlice';
 
 const Cart = (props) => {
-  
+const dispatch = useDispatch();
+useEffect(() => {
+dispatch(cartActions.getItemsFromDatabase({
+items: [],
+totalQuantity: 0
+}))
+}, []);
   const cartItems = useSelector(state => state.cart);
   return (
     <Card className={classes.cart}>
