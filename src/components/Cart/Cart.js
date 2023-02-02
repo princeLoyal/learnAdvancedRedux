@@ -3,7 +3,7 @@ import classes from './Cart.module.css';
 import CartItem from './CartItem';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { cartActions } from '../store/cartSlice';
+import { cartActions } from '../../store/cartSlice';
 
 const Cart = (props) => {
   
