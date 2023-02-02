@@ -34,16 +34,14 @@ dispatch(uiActions.setNotification({
         title: 'Success!',
         message: 'Sent Cart data succesfully'
       }));
-
-        fetchHandler().catch((error) => {
+  };
+fetchHandler().catch((error) => {
           dispatch(uiActions.setNotification({
             status:'error',
             title: 'Error!',
             message: error.message
           }));
         });
-
-    };
 
   }, [cart]);
 
