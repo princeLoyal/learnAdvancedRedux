@@ -8,15 +8,16 @@ import { cartActions } from '../../store/cartSlice';
 const Cart = (props) => {
 const dispatch = useDispatch();
 useEffect(() => {
-dispatch(cartActions.getItemsFromDatabase({
-items: [{
+const items = [{
 id: 'p2',
 name: 'A good book',
 price: 45.6,
 totalPrice: 34,
 quantity: 5
-}],
-totalQuantity: 8
+}];
+const totalQuantity = 7
+dispatch(cartActions.replaceCart({
+items, totalQuantity 
 }))
 }, []);
   const cartItems = useSelector(state => state.cart);
