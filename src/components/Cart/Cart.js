@@ -12,7 +12,9 @@ dispatch(cartActions.getItemsFromDatabase({
 items: [{
 id: 'p2',
 name: 'A good book',
-price: 45.6
+price: 45.6,
+totalPrice: 34,
+quantity: 5
 }],
 totalQuantity: 0
 }))
