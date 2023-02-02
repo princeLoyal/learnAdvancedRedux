@@ -6,7 +6,7 @@ import { useEffect, Fragment } from 'react';
 import Notification from './components/UI/Notification';
 import { uiActions } from './store/index';
 
-const initialRender = true;
+var initialRender = true;
 
 function App() {
   const dispatch = useDispatch();
