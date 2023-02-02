@@ -21,7 +21,7 @@ dispatch(uiActions.setNotification({
   message: 'Sending cart data!'
 }));
     const fetchHandler = async() => {
-      const response = await fetch('https://react-http-c3510-default-rtdb.firebaseio.com/cart.json', {
+      const response = await fetch('http://react-http-c3510-default-rtdb.firebaseio.com/cart.json', {
         method: 'PUT',
         body: JSON.stringify(cart)
       });
