@@ -13,7 +13,15 @@ function App() {
   const notification = useSelector(state => state.ui.notification);
 
   useEffect(() => {
+// git add .
+// git commit -m 'update'
+// git push -u origin main
 
+dispatch(uiActions.setNotification({
+  status:'pending',
+  title: 'pending!',
+  message: 'Sending Cart to database'
+}));
     const fetchHandler = async() => {
       const response = await fetch('https://react-http-c3510-default-rtdb.firebaseio.com/cart.json', {
         method: 'PUT',
