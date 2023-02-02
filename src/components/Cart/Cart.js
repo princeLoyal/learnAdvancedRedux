@@ -16,7 +16,7 @@ price: 45.6,
 totalPrice: 34,
 quantity: 5
 }],
-totalQuantity: 0
+totalQuantity: 8
 }))
 }, []);
   const cartItems = useSelector(state => state.cart);
