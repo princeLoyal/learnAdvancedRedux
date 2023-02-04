@@ -4,7 +4,7 @@ import Products from './components/Shop/Products';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, Fragment } from 'react';
 import Notification from './components/UI/Notification';
-import { uiActions } from './store/index';
+import { sendCartData } from './store/cartSlice';
 
 var initialRender = true;
 
@@ -16,41 +16,11 @@ function App() {
 
   useEffect(() => {
 
-   const fetchHandler = async() => {
-
-dispatch(uiActions.setNotification({
-  status:'pending',
-  title: 'Sending...',
-  message: 'Sending cart data!'
-}));
-
-      const response = await fetch('https://react-http-c3510-default-rtdb.firebaseio.com/cart.json', {
-        method: 'PUT',
-        body: JSON.stringify(cart)
-      });
-      if(!response.ok){
-        throw new Error('Sending Cart details failed.');
-      };
-
-      dispatch(uiActions.setNotification({
-        status:'success',
-        title: 'Success!',
-        message: 'Sent Cart data succesfully'
-      }));
-  };
-
-if(initialRender){
-   initialRender = false;
-   return;
-}
-
-fetchHandler().catch((error) => {
-          dispatch(uiActions.setNotification({
-            status:'error',
-            title: 'Error!',
-            message: error.message
-          }));
-        });
+    if(initialRender){
+      initialRender = false;
+      return;
+    }
+    dispatch(sendCartData(cart));
 
   }, [cart]);
 
