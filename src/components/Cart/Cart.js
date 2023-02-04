@@ -1,25 +1,10 @@
 import Card from '../UI/Card';
 import classes from './Cart.module.css';
 import CartItem from './CartItem';
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { cartActions } from '../../store/cartSlice';
+import { useSelector } from 'react-redux';
 
 const Cart = (props) => {
-const dispatch = useDispatch();
-useEffect(() => {
-const items = [{
-id: 'p2',
-name: 'A good book',
-price: 45.6,
-totalPrice: 34,
-quantity: 5
-}];
-const totalQuantity = 7
-dispatch(cartActions.replaceCart({
-items, totalQuantity 
-}))
-}, []);
+
   const cartItems = useSelector(state => state.cart);
   return (
     <Card className={classes.cart}>
