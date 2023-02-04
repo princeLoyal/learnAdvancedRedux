@@ -1,6 +1,6 @@
 import { createSlice, configureStore } from "@reduxjs/toolkit";
 import cartReducer from '../store/cartSlice';
-const initialCartSlice = { cartShow: true, notification: null}
+const initialCartSlice = { cartShow: false, notification: null}
 const uiSlice = createSlice({
     name: 'cartShow',
     initialState: initialCartSlice,
