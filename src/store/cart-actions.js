@@ -37,8 +37,8 @@ export const sendCartData = (cart) => {
 };
 
 export const getCartData = () => {
-alert('hshshs')
     return async (dispatch) => {
+alert('hshshs')
         try {
         const getRequest = async () => {
             const response = await fetch('https://react-http-c3510-default-rtdb.firebaseio.com/cart.json');
