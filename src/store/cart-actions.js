@@ -37,6 +37,7 @@ export const sendCartData = (cart) => {
 };
 
 export const getCartData = () => {
+alert('hshshs')
     return async (dispatch) => {
         try {
         const getRequest = async () => {
